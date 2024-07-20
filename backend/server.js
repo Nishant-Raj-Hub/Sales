@@ -2,11 +2,13 @@ import express from "express";
 import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from "mongoose";
-import route from "./routes/userRoute.js";
+import authRoute from "./routes/authRoute.js";
+import cookieParser from 'cookie-parser';
+import bodyParser from "body-parser";
 const app = express();
 
 dotenv.config();
-
+app.use(cookieParser());
 //cors
 var corsOptions = {
   origin: process.env.CORS_ORIGIN,
@@ -17,9 +19,8 @@ app.use(cors(corsOptions));
 
 
 const port = process.env.PORT;
-import bodyParser from "body-parser";
 app.use(bodyParser.json());
-app.use('/user', route);
+app.use('/auth', authRoute)
 
 mongoose
   .connect(process.env.MONGODB_URL, {
