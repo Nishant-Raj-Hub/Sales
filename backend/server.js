@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import authRoute from "./routes/authRoute.js";
 import cookieParser from 'cookie-parser';
 import bodyParser from "body-parser";
+import masterRoute from "./routes/masterRoute.js";
 const app = express();
 
 dotenv.config();
@@ -20,7 +21,10 @@ app.use(cors(corsOptions));
 
 const port = process.env.PORT;
 app.use(bodyParser.json());
-app.use('/auth', authRoute)
+
+//routes
+app.use('/auth', authRoute);
+app.use('/master', masterRoute);
 
 mongoose
   .connect(process.env.MONGODB_URL, {

@@ -29,15 +29,35 @@
    .input-block{
      font-size: 14px;
      margin: 12px 0px;
+     padding: 8px 0px 0px 8px;
+     background-color: white;
+     border-radius: 10px;
    }
+
+   .input-lable{
+    font-size: 13px;
+   }
+   
    .input-field{
-     padding: 2px 4px;
+    margin: 2px 4px;
+     /* padding: 2px 4px; */
      width: 90%;
      height: 2rem;
      background-color: white;
-     border-radius: 8px;
-     border: 1px solid rgb(252, 195, 158) ;
+     /* border-radius: 8px; */
+     /* border: 1px solid rgb(252, 195, 158) ; */
+     border: none;
      color: black;
+   }
+   .input-field:focus{
+    border: none;
+    outline: none;
+    /* background-color: red; */
+   }
+   
+   .form-error{
+    color: red;
+    font-size: 12px;
    }
    
    .buttons{
@@ -63,7 +83,6 @@
    .rightPart {
      width: 50%;
      height: 100%;
-     /* padding: 20px; */
    }
    
    .rightPart img {

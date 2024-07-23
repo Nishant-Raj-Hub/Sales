@@ -18,6 +18,11 @@
      width: 55%;
      height: auto;
    }
+
+   .form-error{
+    color: red;
+    font-size: 12px;
+   }
    
    .leftPart{
      padding: 10px 10px;

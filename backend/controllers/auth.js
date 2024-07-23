@@ -56,7 +56,7 @@ export const login = async (req, res) => {
     const token = jwt.sign({ email }, process.env.JWT_SECRET);
     // res.cookie("token", token);
 
-    // delete userExist.password;
+    delete userExist.password;
     res.status(200).json({ user: userExist, token });
   } catch (error) {
     res.status(500).json({ error: "Internal server error" });
